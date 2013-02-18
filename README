@@ -1,2 +1,40 @@
 See template.info.txt for main info
 See COPYING for license info
+
+# About
+
+This "theme" by Ryan W. Moore is actually intended to be modified with a
+Twitter Bootstrap theme of your choice. Twitter Bootstrap is a framework to
+create websites that work and look great in a range of devices and browsers.
+It's quite customizable and there's many themes available for free and/or pay. 
+
+# Customization
+
+This DokuWiki theme will get you started with a very basic Twitter Boostrap
+theme. Then, replace the following files with your own Bootstrap files:
+
+css:
+bootstrap.min.css
+bootstrap-responsive.min.css
+
+img:
+glyphicons-halflings.png
+glyphicons-halflings-white.png
+
+js:
+bootstrap.min.js
+
+## Warning
+
+This theme only supports minified CSS/javascript. 
+
+
+# Base Version
+
+This theme is based off of Twitter Bootstrap 2.3.
+
+
+# Theme Resources
+
+Here's some good free themes to start with: http://bootswatch.com/ <= also has
+a swatch maker so you can make your own style.

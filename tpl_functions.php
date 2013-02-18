@@ -243,3 +243,40 @@ if (!function_exists('tpl_incdir')) {
         return DOKU_INC.'lib/tpl/'.$conf['template'].'/';
     }
 }
+
+function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
+{
+    global $conf;
+    $ret = '';
+    $ret .= '<ul class="nav nav-list">';
+    $ret .= '<li class="nav-header">'.$conf['start'].'</li>';
+
+    //Only supports top level links for now.
+    foreach($data as $heading)
+    {
+        $ret .= '<li><a href="#' . $heading['hid'] . '">'. $heading['title'] . '</a></li>';
+    }
+
+    $ret .= '</ul>';
+
+    return $ret;
+}
+
+function _tpl_toc_to_twitter_bootstrap_event_hander(&$event, $param)
+{
+    //This is tied to the specific format of the DokuWiki TOC.
+    //
+    //$toc = $event['data'];
+    //foreach ($
+    //print_r($event->data);
+    echo _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($event->data);
+}
+
+function _tpl_toc_to_twitter_bootstrap()
+{
+    //Force generation of TOC, request that the TOC is returned as HTML, but then ignore the returned string. The hook will instead dump out the TOC.
+    global $EVENT_HANDLER;
+    $EVENT_HANDLER->register_hook('TPL_TOC_RENDER', 'AFTER', NULL, '_tpl_toc_to_twitter_bootstrap_event_hander');
+    tpl_toc(true);
+}
+
