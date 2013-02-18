@@ -19,6 +19,20 @@ Software Foundation does not consider GPL2 to be compatible with Apache 2.0. I
 don't really know how much it matters to the average user. Consult a lawyer if
 you're worried about this incompatibility. 
 
+# Installation from Github
+
+Do something like the following:
+
+1. Install DokuWiki as you normally would. See
+   [DokuWiki.org](https://www.dokuwiki.org).
+2. ```cd dokuwiki/lib/tpl```
+3. ```mkdir dokutwitterbootstrap```
+4. ```cd dokutwitterbootstrap```
+5. ```git init```
+6. ```git pull git://github.com/ryanwmoore/dokutwitterbootstrap.git```
+7. Using DokuWiki's admin interface, change the wiki's template to
+   dokutwitterbootstrap.
+
 # Customization
 
 This DokuWiki theme will get you started with a very basic Twitter Boostrap
