@@ -1,6 +1,9 @@
 See template.info.txt for main info
 See COPYING for license info
 
+**This software is in an extremely early alpha version. It's recommended that
+you set your expectations low.**
+
 # About
 
 This "theme" by Ryan W. Moore is actually intended to be modified with a
