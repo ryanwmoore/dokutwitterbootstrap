@@ -41,16 +41,19 @@ Do something like the following:
 This DokuWiki theme will get you started with a very basic Twitter Boostrap
 theme. Then, replace the following files with your own Bootstrap files:
 
-css:
-bootstrap.min.css
-bootstrap-responsive.min.css
-
-img:
-glyphicons-halflings.png
-glyphicons-halflings-white.png
-
-js:
-bootstrap.min.js
+* css/
+    * bootstrap.min.css
+    * bootstrap-responsive.min.css
+    * modifications.css: place minor global modifications to the
+      bootstrap theme here. See sample modifications.css, which enables
+      the use of the floating top navbar 
+* img/
+    * glyphicons-halflings.png
+    * glyphicons-halflings-white.png
+* js/
+    * bootstrap.min.js: compile all your desired plugins into a single
+      minimized javascript file. The sample bootstrap.min.js includes all
+      plugins 
 
 ## Warning
 
@@ -64,5 +67,5 @@ This theme is based off of Twitter Bootstrap 2.3.
 
 # Theme Resources
 
-Here's some good free themes to start with: http://bootswatch.com/ <= also has
-a swatch maker so you can make your own style.
+Here's some good free themes to start with: http://bootswatch.com/
+That site also has a swatch maker so you can make your own style.
