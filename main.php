@@ -16,17 +16,19 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 <head>
     <meta charset="UTF-8" />
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <?php tpl_metaheaders()?>
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
+    <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-responsive.min.css")); ?>" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#sidetoc">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -39,7 +41,11 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
           <a class="brand" href="#"><?php echo $conf['title']; ?></a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link"><?php echo tpl_userinfo(); ?></a>
+                <?php
+                    tpl_userinfo();
+                    //TODO: If could link to user's profile? If so, wrap in:
+                    //echo 'Logged in as <a href="#" class="navbar-link">'.$username.'</a>';
+                ?>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -54,39 +60,41 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
+          <div class="sidebar-nav affix" id="sidetoc">
 
             <?php _tpl_toc_to_twitter_bootstrap(); ?>
 
-            </ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
           <div class="row-fluid">
             <div class="span9 dokuwiki">
                 <?php tpl_content(false); ?>
+            </div>
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
 
       <hr>
-    
+
     <!-- ********** FOOTER ********** -->
     <footer>
         <div class="muted"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-            <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-            <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
-            <?php tpl_includeFile('footer.html') ?>
+
+        <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+        <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
+        <?php tpl_includeFile('footer.html') ?>
     </footer>
 
     </div><!--/.fluid-container-->
 
-    <?php 
+    <?php
         //Required by DokuWiki to do its housekeeping (e.g., search indexes).
-        tpl_indexerWebBug(); 
+        tpl_indexerWebBug();
     ?>
 
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
     <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
 </body>
 </html>
