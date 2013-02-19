@@ -14,3 +14,13 @@ body {
       padding-right: 5px;
     }
 }
+
+@media (max-width: 767px) {
+    /* The floating-to-the-side table of contents is cool, but, not if we're
+     * low on screen space! */
+    #sidetoc.affix {
+        position: static;
+        width: auto;
+        top: 0;
+  }
+}

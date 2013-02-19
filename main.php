@@ -24,8 +24,13 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("css/dokuwikicompatibility.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-responsive.min.css")); ?>" rel="stylesheet">
+
+
+    <?php tpl_includeFile('meta.html') ?>
+
 </head>
 
 <body data-spy="scroll" data-target="#sidetoc">
@@ -38,19 +43,24 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><?php echo $conf['title']; ?></a>
+          <a class="brand" href="./"><?php echo $conf['title']; ?></a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
                 <?php
-                    tpl_userinfo();
+                    if ($_SERVER['REMOTE_USER']) {
+                        echo '<span class="user">';
+                        tpl_userinfo();
+                        echo '</span>';
+                    }
                     //TODO: If could link to user's profile? If so, wrap in:
                     //echo 'Logged in as <a href="#" class="navbar-link">'.$username.'</a>';
                 ?>
             </p>
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <?php
+                tpl_includeFile('nav.html');
+                _tpl_output_tools_twitter_bootstrap($conf['useacl'] && $showTools);
+              ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -68,8 +78,11 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
         </div><!--/span-->
         <div class="span9">
           <div class="row-fluid">
-            <div class="span9 dokuwiki">
+            <div class="span9 dokuwiki" id="dokuwiki__top">
+
+                <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
                 <?php tpl_content(false); ?>
+
             </div>
           </div><!--/row-->
         </div><!--/span-->
@@ -77,14 +90,22 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
       <hr>
 
-    <!-- ********** FOOTER ********** -->
-    <footer>
-        <div class="muted"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
+      <footer class="navbar navbar-static-bottom">
+          <div class="row-fluid">
+            <div class="span12">
 
-        <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-        <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
-        <?php tpl_includeFile('footer.html') ?>
-    </footer>
+              <div>
+                  <?php _tpl_output_page_tools($showTools, 'li'); ?>
+                  <?php tpl_pageinfo() /* 'Last modified' etc */ ?>
+
+                  <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+                  <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
+                  <?php tpl_includeFile('footer.html') ?>
+              </div>
+
+            </div>
+          </div>
+      </footer>
 
     </div><!--/.fluid-container-->
 

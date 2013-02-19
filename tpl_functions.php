@@ -250,6 +250,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
     $ret = '';
     $ret .= '<ul class="nav nav-list">';
     $ret .= '<li class="nav-header">'.$conf['start'].'</li>';
+    //$ret .= '<li class="divider"></li>';
 
     //Only supports top level links for now.
     foreach($data as $heading)
@@ -278,5 +279,72 @@ function _tpl_toc_to_twitter_bootstrap()
     global $EVENT_HANDLER;
     $EVENT_HANDLER->register_hook('TPL_TOC_RENDER', 'AFTER', NULL, '_tpl_toc_to_twitter_bootstrap_event_hander');
     tpl_toc(true);
+}
+
+
+//Output various links to user tools wrapped in a user-specified element.
+function _tpl_output_tools_twitter_bootstrap($showTools = true, $element = 'li')
+{
+    if ($showTools) {
+        tpl_action('admin', 1, $element);
+        _tpl_action('userpage', 1, $element);
+        tpl_action('profile', 1, $element);
+        tpl_action('register', 1, $element);
+        tpl_action('login', 1, $element);
+    }
+}
+
+function _tpl_output_page_tools($showTools = true, $element = 'li'){
+    global $lang;
+
+    $textonly = true;
+    //Doesn't work until we can specify a span to append after the <a></a> but before the closing </li>.
+    $spandivider = '<span class="divider">/</span>';
+    $elementbegin = "<$element>";
+    $elementend = "</$element>";
+
+    if ($showTools) {
+        echo '<ul class="breadcrumb">';
+            echo '<li>'.$lang['page_tools'].$spandivider;
+
+            echo $elementbegin;
+            $content = tpl_action('edit', $textonly, '', true);
+            if ($content != '') { echo $content.$spandivider; }
+            echo $elementend;
+
+            echo $elementbegin;
+            //Notice the use of _tpl_action instead of tpl_action. This doesn't
+            //actully return the string and instead automatically prints it
+            //out.
+            _tpl_action('discussion', $textonly, '', true);
+            echo $spandivider;
+            echo $elementend;
+
+            echo $elementbegin;
+            $content = tpl_action('revisions', $textonly, '', true);
+            if ($content != '') { echo $content.$spandivider; }
+            echo $elementend;
+
+            echo $elementbegin;
+            $content = tpl_action('backlink', $textonly, '', true);
+            if ($content != '') { echo $content.$spandivider; }
+            echo $elementend;
+
+            echo $elementbegin;
+            $content = tpl_action('subscribe', $textonly, '', true);
+            if ($content != '') { echo $content.$spandivider; }
+            echo $elementend;
+
+            echo $elementbegin;
+            $content = tpl_action('revert', $textonly, '', true);
+            if ($content != '') { echo $content.$spandivider; }
+            echo $elementend;
+
+            echo $elementbegin;
+            $content = tpl_action('top', $textonly, '', true);
+            echo $content;
+            echo $elementend;
+        echo '</ul>';
+    }
 }
 
