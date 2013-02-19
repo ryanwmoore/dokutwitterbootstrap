@@ -78,8 +78,8 @@ That site also has a swatch maker so you can make your own style.
 
 This template supports the use of a ```nav.html``` file (a sample is included).
 Add any Wiki-wide links that you would like to, with each link being inside an
-<li> element. I tried adding support for a Wiki-based navigation page, instead
-of raw HTML, but due to how DokuWiki outputs lists, the output clashed with
+li element. I tried adding support for a Wiki-based navigation page, instead of
+raw HTML, but due to how DokuWiki outputs lists, the output clashed with
 existing CSS and was unusable.
 
 This template does not support any sidebars.
@@ -88,7 +88,7 @@ This template does support a ```footer.html``` file, which will be output after
 the page information and site license.
 
 This template does support a ```meta.html``` file, which will be output right
-before the <head> tag is closed.
+before the head element is closed.
 
 # Disclaimer
 
