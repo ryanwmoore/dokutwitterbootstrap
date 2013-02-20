@@ -249,8 +249,8 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
     global $conf;
     $ret = '';
     $ret .= '<ul class="nav nav-list">';
-    $ret .= '<li class="nav-header">'.$conf['start'].'</li>';
-    //$ret .= '<li class="divider"></li>';
+    //$ret .= '<li class="nav-header">'.$conf['start'].'</li>';
+    $ret .= '<li class="divider"></li>';
 
     //Only supports top level links for now.
     foreach($data as $heading)
@@ -258,6 +258,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
         $ret .= '<li><a href="#' . $heading['hid'] . '"><i class="icon-chevron-right"></i> '. $heading['title'] . '</a></li>';
     }
 
+    $ret .= '<li class="divider"></li>';
     $ret .= '</ul>';
 
     return $ret;
