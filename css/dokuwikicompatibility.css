@@ -5,6 +5,9 @@
     white-space: normal;
 }
 
-#dw__editform textarea {
+.editBar .edit,
+#dw__editform textarea 
+{
     width: auto;
 }
+
