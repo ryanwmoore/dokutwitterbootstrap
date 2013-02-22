@@ -74,75 +74,71 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     </div>
 
 
-        <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
-        <?php tpl_includeFile('header.html') ?>
+    <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
+    <?php tpl_includeFile('header.html') ?>
 
-        <div class="wrapper">
+    <div class="wrapper">
 
-            <div class="container-fluid">
-            <!-- ********** ASIDE ********** -->
+        <div class="container-fluid">
+        <!-- ********** ASIDE ********** -->
+          <div class="row-fluid">
+            <div class="span3">
+              <div class="sidebar-nav affix" id="sidetoc">
+
+                <?php _tpl_toc_to_twitter_bootstrap(); ?>
+
+              </div><!--/.well -->
+            </div><!--/span-->
+            <div class="span9">
               <div class="row-fluid">
-                <div class="span3">
-                  <div class="sidebar-nav affix" id="sidetoc">
 
-                    <?php _tpl_toc_to_twitter_bootstrap(); ?>
+                <div class="wrapper">
+                    <div class="span9" id="dokuwiki__content">
 
-                  </div><!--/.well -->
-                </div><!--/span-->
-                <div class="span9">
-                  <div class="row-fluid">
+                        <div class="pad">
 
-                    <div class="wrapper">
-                        <div class="span9" id="dokuwiki__content">
+                            <div class="page">
 
-                            <div class="pad">
-
-                                <div class="page">
-
-                                    <?php html_msgarea(); /* occasional error and info messages */ ?>
-                                    <?php tpl_flush(); ?>
-                                    <?php tpl_content(false); ?>
-                                    <div class="clearer"></div>
-
-                                </div>
+                                <?php html_msgarea(); /* occasional error and info messages */ ?>
+                                <?php tpl_flush(); ?>
+                                <?php tpl_content(false); ?>
+                                <div class="clearer"></div>
 
                             </div>
+
                         </div>
-
                     </div>
-                  </div><!--/row-->
-                </div><!--/span-->
-              </div><!--/row-->
-            </div><!-- container-fluid -->
 
-            <!-- ********** CONTENT ********** -->
-            <div id="dokuwiki__content"><div class="pad">
-                <?php tpl_flush() /* flush the output buffer */ ?>
-                <?php tpl_includeFile('pageheader.html') ?>
-
-                <div class="page">
-                    <!-- wikipage start -->
-                    <?php tpl_content() /* the main content */ ?>
-                    <!-- wikipage stop -->
-                    <div class="clearer"></div>
                 </div>
+              </div><!--/row-->
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!-- container-fluid -->
 
-                <?php tpl_flush() ?>
-                <?php tpl_includeFile('pagefooter.html') ?>
-            </div></div><!-- /content -->
+        <div class="clearer"></div>
+        <hr class="a11y" />
 
-            <div class="clearer"></div>
-            <hr class="a11y" />
+    </div><!-- /wrapper -->
 
-        </div><!-- /wrapper -->
+    <!-- ********** FOOTER ********** -->
+    <footer class="navbar navbar-static-bottom">
+      <div class="row-fluid">
+        <div class="span12">
 
-        <!-- ********** FOOTER ********** -->
-        <div id="dokuwiki__footer"><div class="pad">
-            <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-            <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-        </div></div><!-- /footer -->
+          <div>
+              <?php _tpl_output_page_tools($showTools, 'li'); ?>
+              <?php tpl_pageinfo() /* 'Last modified' etc */ ?>
 
-        <?php tpl_includeFile('footer.html') ?>
+              <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+              <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
+              <?php tpl_includeFile('footer.html') ?>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <?php tpl_includeFile('footer.html') ?>
     </div></div><!-- /site -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
