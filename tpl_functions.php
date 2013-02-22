@@ -252,10 +252,15 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
     //$ret .= '<li class="nav-header">'.$conf['start'].'</li>';
     $ret .= '<li class="divider"></li>';
 
+    $first = true;
+    $li_inner = ' class ="active"';
+
     //Only supports top level links for now.
     foreach($data as $heading)
     {
-        $ret .= '<li><a href="#' . $heading['hid'] . '"><i class="icon-chevron-right"></i> '. $heading['title'] . '</a></li>';
+        $ret .= '<li' . $li_inner . '><a href="#' . $heading['hid'] . '"><i class="icon-chevron-right"></i> '. $heading['title'] . '</a></li>';
+
+        $li_inner = '';
     }
 
     $ret .= '<li class="divider"></li>';
