@@ -35,6 +35,10 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
 <body data-spy="scroll" data-target="#sidetoc">
 
+    <div id="dokuwiki__site"><div id="dokuwiki__top"
+        class="dokuwiki site mode_<?php echo $ACT ?>">
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -78,10 +82,23 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
         </div><!--/span-->
         <div class="span9">
           <div class="row-fluid">
-            <div class="span9 dokuwiki" id="dokuwiki__top">
 
-                <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
-                <?php tpl_content(false); ?>
+            <div class="wrapper">
+                <div class="span9" id="dokuwiki__content">
+
+                    <div class="pad">
+
+                        <div class="page">
+
+                            <?php html_msgarea(); /* occasional error and info messages */ ?>
+                            <?php tpl_flush(); ?>
+                            <?php tpl_content(false); ?>
+                            <div class="clearer"></div>
+
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
           </div><!--/row-->
@@ -115,7 +132,16 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     ?>
 
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
-    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
-    <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+<?php
+                /*
+    //<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+    //<script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+                    //<script src="<?php echo tpl_getMediaFile(array("js/resolve_jquery_issues.js")); ?>"></script>
+                    //*/
+    ?>
+
+    </div> <!-- dokuwiki__top -->
+    </div> <!-- dokuwiki__site -->
+
 </body>
 </html>
