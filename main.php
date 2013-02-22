@@ -2,7 +2,7 @@
 /**
  * DokuWiki Twitter Boostrap Template
  *
- * @link     http://dokuwiki.org/template:starter
+ * @link     https://github.com/ryanwmoore/dokutwitterbootstrap
  * @author   Ryan Moore <rwmoore07@gmail.com>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
@@ -143,5 +143,12 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+
+    <!-- load any scripts that may require a newer jQuery library than DokuWiki provides. -->
+    <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+
+    <!-- restore jQuery for DokuWiki -->
+    <script src="<?php echo tpl_getMediaFile(array("js/restore_dokuwikis_jquery.js")); ?>"></script>
 </body>
 </html>
