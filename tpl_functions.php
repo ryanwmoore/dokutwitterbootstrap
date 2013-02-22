@@ -287,6 +287,10 @@ function _tpl_toc_to_twitter_bootstrap()
 function _tpl_output_tools_twitter_bootstrap($showTools = true, $element = 'li')
 {
     if ($showTools) {
+        tpl_action('recent', 1, 'li');
+        tpl_action('media', 1, 'li');
+        tpl_action('index', 1, 'li');
+
         tpl_action('admin', 1, $element);
         _tpl_action('userpage', 1, $element);
         tpl_action('profile', 1, $element);
@@ -308,10 +312,8 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
         echo '<ul class="breadcrumb">';
             echo '<li>'.$lang['page_tools'].$spandivider;
 
-            echo $elementbegin;
             $content = tpl_action('edit', $textonly, '', true);
-            if ($content != '') { echo $content.$spandivider; }
-            echo $elementend;
+            if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
 
             echo $elementbegin;
             //Notice the use of _tpl_action instead of tpl_action. This doesn't
@@ -321,25 +323,17 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
             echo $spandivider;
             echo $elementend;
 
-            echo $elementbegin;
             $content = tpl_action('revisions', $textonly, '', true);
-            if ($content != '') { echo $content.$spandivider; }
-            echo $elementend;
+            if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
 
-            echo $elementbegin;
             $content = tpl_action('backlink', $textonly, '', true);
-            if ($content != '') { echo $content.$spandivider; }
-            echo $elementend;
+            if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
 
-            echo $elementbegin;
             $content = tpl_action('subscribe', $textonly, '', true);
-            if ($content != '') { echo $content.$spandivider; }
-            echo $elementend;
+            if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
 
-            echo $elementbegin;
             $content = tpl_action('revert', $textonly, '', true);
-            if ($content != '') { echo $content.$spandivider; }
-            echo $elementend;
+            if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
 
             echo $elementbegin;
             $content = tpl_action('top', $textonly, '', true);
