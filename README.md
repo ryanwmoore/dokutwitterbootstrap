@@ -61,12 +61,13 @@ theme. Then, replace the following files with your own Bootstrap files:
 
 ## Warning
 
-This theme only supports minified CSS/javascript. 
+This theme only supports minified Bootstrap CSS and javascript.
 
 
 # Base Version
 
-This theme is based off of Twitter Bootstrap 2.3.
+This theme is based off of Twitter Bootstrap 2.3. Specifically the [fluid.html
+layout example](http://twitter.github.com/bootstrap/examples/fluid.html).
 
 
 # Theme Resources
