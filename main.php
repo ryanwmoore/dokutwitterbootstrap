@@ -90,7 +90,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
             <div class="span3">
               <?php if ($conf['sidebar']) { ?>
 
-                  <div class="sidebar-nav affix" id="sidetoc">
+                  <div class="sidebar-nav affix span3" id="sidetoc">
                     <?php _tpl_toc_to_twitter_bootstrap(); ?>
                   </div>
 
