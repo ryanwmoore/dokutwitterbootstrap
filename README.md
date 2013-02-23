@@ -49,24 +49,38 @@ theme. Then, replace the following files with your own Bootstrap files:
     * bootstrap.min.css
     * bootstrap-responsive.min.css
     * modifications.css: place minor global modifications to the
-      bootstrap theme here. See sample modifications.css, which enables
-      the use of the floating top navbar 
+      bootstrap theme here. See included modifications.css, which enables the
+      use of the floating top navbar 
 * img/
     * glyphicons-halflings.png
     * glyphicons-halflings-white.png
 * js/
     * bootstrap.min.js: compile all your desired plugins into a single
-      minimized javascript file. The sample bootstrap.min.js includes all
+      minimized javascript file. The included bootstrap.min.js includes all
       plugins 
 
-## Warning
+# Warning
 
-This theme only supports minified Bootstrap CSS and javascript.
+This theme is hard-coded to use minified Bootstrap CSS and Bootstrap javascript. 
+
+It automatically includes jQuery 1.9.1 via the Google CDN.
+
+This theme is intended primarily for small sites that are modified by one or so
+people. Effort has been made to make public facing things look nice, but
+non-public interfaces (e.g., edit interfaces, admin, configuration settings)
+may not have been updated and may appear ugly. These should still be
+functional.
+
+##  Bugs
+
+The only major ``bug'' that I am aware of is that, when attempting to upload a
+new file to the median manager, a file upload button may not appear.  Click on
+the words "select files..." and the file upload select box will appear.
 
 
 # Base Version
 
-This theme is based off of Twitter Bootstrap 2.3. Specifically the [fluid.html
+This theme is based off of Twitter Bootstrap 2.3. Specifically the [fluid.htmlTop
 layout example](http://twitter.github.com/bootstrap/examples/fluid.html).
 
 
@@ -83,8 +97,6 @@ li element. I tried adding support for a Wiki-based navigation page, instead of
 raw HTML, but due to how DokuWiki outputs lists, the output clashed with
 existing CSS and was unusable.
 
-This template does not support any sidebars.
-
 This template does support a ```footer.html``` file, which will be output after
 the page information and site license.
 
@@ -95,4 +107,4 @@ before the head element is closed.
 
 I'm not intimately familiar with either DokuWiki template coding or Bootstrap.
 I may have done stupid things. If so, please make appropriate changes and
-submit a pull request.
+send a pull request.
