@@ -355,3 +355,28 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
     }
 }
 
+function _tpl_output_search_bar()
+{
+    //Modified from the official tpl_searchform function.
+    global $lang;
+    global $ACT;
+    global $QUERY;
+
+    // don't print the search form if search action has been disabled
+    if(!actionOk('search')) return false;
+
+    print '<form action="'.wl().'" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no">';
+    print '<input type="hidden" name="do" value="search" />';
+    print '<input type="text" placeholder="'.$lang['btn_search'].'" ';
+    if($ACT == 'search') print 'value="'.htmlspecialchars($QUERY).'" ';
+    if(!$autocomplete) print 'autocomplete="off" ';
+    print 'id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" />';
+
+    print '<button type="submit" value="" class="button btn" title="'.$lang['btn_search'].'">';
+    print '<i class="icon-search"></i></button>';
+
+    if($ajax) print '<div id="qsearch__out" class="ajax_qsearch JSpopup"></div>';
+    print '</div></form>';
+    return true;
+
+}

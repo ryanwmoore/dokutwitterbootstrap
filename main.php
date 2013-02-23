@@ -51,6 +51,10 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
           </button>
           <a class="brand" href="./"><?php echo $conf['title']; ?></a>
           <div class="nav-collapse collapse">
+            <div class="navbar-form pull-right">
+                <?php _tpl_output_search_bar(); ?>
+            </div>
+
             <p class="navbar-text pull-right">
                 <?php
                     if ($_SERVER['REMOTE_USER']) {
@@ -68,6 +72,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                 _tpl_output_tools_twitter_bootstrap($conf['useacl'] && $showTools);
               ?>
             </ul>
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
