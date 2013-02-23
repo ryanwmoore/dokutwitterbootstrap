@@ -9,22 +9,28 @@ you set your expectations low.**
 This "theme" is actually intended to be modified with a Twitter Bootstrap theme
 of your choice. Twitter Bootstrap is a framework to create websites that work
 and look great in a range of devices and browsers.  It's quite customizable and
-there's many themes available for free and/or pay.
+there's many themes available for free and/or pay. A basic theme would require
+only that you overwrite a few files included in this theme. More radical
+changes would require changing the actual template layout (mostly in main.php).
 
 Effort has been put into making the template's public facing content look okay.
 Some back end functionality (e.g., the admin interface) may look distorted, but
 should be useful.
 
-# License
+# Why This Theme?
 
-This DokuWiki theme is based off of the DokuWiki Starter template, released
-under GPL v2.0. Therefore, this template is also released under that license.
-I've modified the starter template to make use of Twitter Bootstrap
-code/functionality. Twitter Bootstrap is licensed under Apache License v2.0.
-According to http://www.apache.org/licenses/GPL-compatibility.html , the Free
-Software Foundation does not consider GPL2 to be compatible with Apache 2.0. I
-don't really know how much it matters to the average user. Consult a lawyer if
-you're worried about this incompatibility. 
+The [official Bootstrap page](http://twitter.github.com/bootstrap/) has many
+reasons why you might want your site to be based on Bootstrap. Bootstrap
+contains many useful components for building websites, including a responsive
+grid layout and excellent plug-in support.
+
+[DokuWiki](https://www.dokuwiki.org/) is an excellent file-based, open-source
+wiki software. It lets you easily edit and organize pages without requiring a
+database server.
+
+Combining the above two (via this theme), we get an excellent content editor
+(DokuWiki) and an excellent system to control the layout and look of the
+content (Bootstrap).
 
 # Installation from Github
 
@@ -103,8 +109,22 @@ the page information and site license.
 This template does support a ```meta.html``` file, which will be output right
 before the head element is closed.
 
+# License
+
+This DokuWiki theme is based off of the [DokuWiki Starter
+template](https://github.com/selfthinker/dokuwiki_template_starter/), released
+under GPL v2.0. Therefore, this template is also released under that license.
+I've modified the starter template to make use of Twitter Bootstrap
+code/functionality. Twitter Bootstrap is licensed under Apache License v2.0.
+According to http://www.apache.org/licenses/GPL-compatibility.html , the Free
+Software Foundation does not consider GPL2 to be compatible with Apache 2.0. I
+don't really know how much it matters to the average user. Consult a lawyer if
+you're worried about this potential incompatibility. 
+
+
 # Disclaimer
 
 I'm not intimately familiar with either DokuWiki template coding or Bootstrap.
 I may have done stupid things. If so, please make appropriate changes and
 send a pull request.
+
