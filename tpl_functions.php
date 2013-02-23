@@ -244,12 +244,19 @@ if (!function_exists('tpl_incdir')) {
     }
 }
 
-function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
+function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header='', $firstlevel=false)
 {
-    global $conf;
+
+    if (count($data) == 0)
+    {
+        return '';
+    }
+
     $ret = '';
     $ret .= '<ul class="nav nav-list">';
-    //$ret .= '<li class="nav-header">'.$conf['start'].'</li>';
+    if ($header != '') {
+        $ret .= '<li class="nav-header">'.$header.'</li>';
+    }
     $ret .= '<li class="divider"></li>';
 
     $first = true;
@@ -271,12 +278,9 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data)
 
 function _tpl_toc_to_twitter_bootstrap_event_hander(&$event, $param)
 {
+    global $conf;
     //This is tied to the specific format of the DokuWiki TOC.
-    //
-    //$toc = $event['data'];
-    //foreach ($
-    //print_r($event->data);
-    echo _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($event->data);
+    echo _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($event->data, $conf['sidebar'], true);
 }
 
 function _tpl_toc_to_twitter_bootstrap()
@@ -292,9 +296,13 @@ function _tpl_toc_to_twitter_bootstrap()
 function _tpl_output_tools_twitter_bootstrap($showTools = true, $element = 'li')
 {
     if ($showTools) {
+        //Separate whatever was there from these links.
+        echo '<li class="divider-vertical"></li>';
         tpl_action('recent', 1, 'li');
         tpl_action('media', 1, 'li');
         tpl_action('index', 1, 'li');
+
+        echo '<li class="divider-vertical"></li>';
 
         tpl_action('admin', 1, $element);
         _tpl_action('userpage', 1, $element);
@@ -308,14 +316,13 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
     global $lang;
 
     $textonly = true;
-    //Doesn't work until we can specify a span to append after the <a></a> but before the closing </li>.
-    $spandivider = '<span class="divider">/</span>';
+    $spandivider = '';
     $elementbegin = "<$element>";
     $elementend = "</$element>";
 
     if ($showTools) {
-        echo '<ul class="breadcrumb">';
-            echo '<li>'.$lang['page_tools'].$spandivider;
+        echo '<ul class="nav">';
+            //echo '<li>'.$lang['page_tools'].$spandivider;
 
             $content = tpl_action('edit', $textonly, '', true);
             if ($content != '') { echo $elementbegin.$content.$spandivider.$elementend; }
