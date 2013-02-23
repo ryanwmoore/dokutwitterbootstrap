@@ -31,6 +31,16 @@ Combining the above two (via this theme), we get an excellent content editor
 (DokuWiki) and an excellent system to control the layout and look of the
 content (Bootstrap).
 
+## Screenshots
+
+Here's what the theme looks like by default. Multiple screenshots in different
+screen resolutions show how the site changes as the amount of screen real
+estate changes.
+
+1. [screenshot_320x480.png]
+2. [screenshot_768x1024.png]
+3. [screenshot_980x1280.png]
+
 # Installation from Github
 
 Do something like the following:
