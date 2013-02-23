@@ -83,11 +83,13 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
         <!-- ********** ASIDE ********** -->
           <div class="row-fluid">
             <div class="span3">
-              <div class="sidebar-nav affix" id="sidetoc">
+              <?php if ($conf['sidebar']) { ?>
 
-                <?php _tpl_toc_to_twitter_bootstrap(); ?>
+                  <div class="sidebar-nav affix" id="sidetoc">
+                    <?php _tpl_toc_to_twitter_bootstrap(); ?>
+                  </div>
 
-              </div><!--/.well -->
+              <?php } ?>
             </div><!--/span-->
             <div class="span9">
               <div class="row-fluid">
@@ -125,13 +127,25 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
       <div class="row-fluid">
         <div class="span12">
 
-          <div>
+          <div class="navbar-inner">
               <?php _tpl_output_page_tools($showTools, 'li'); ?>
+              <br />
+              <div class="clearer"></div>
+              <div>
               <?php tpl_pageinfo() /* 'Last modified' etc */ ?>
 
               <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
               <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
               <?php tpl_includeFile('footer.html') ?>
+              <div>
+              <div class="clearer"></div>
+              <div>
+                <p><a href="http://www.dokuwiki.org">DokuWiki</a>
+                    <a href="https://github.com/ryanwmoore/dokutwitterbootstrap">template</a>
+                    (released under <a href="http://www.gnu.org/licenses/gpl.html">GPLv2</a>)
+                    using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+                    by <a href="http://rmoore.cs.pitt.edu/">Ryan W. Moore</a></p>
+              </div>
           </div>
 
         </div>
