@@ -37,9 +37,9 @@ Here's what the theme looks like by default. Multiple screenshots in different
 screen resolutions show how the site changes as the amount of screen real
 estate changes.
 
-1. [https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_320x480.png]
-2. [https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_768x1024.png]
-3. [https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_980x1280.png]
+1. [320x480](https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_320x480.png)
+2. [768x1024](https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_768x1024.png)
+3. [980x1280](https://raw.github.com/ryanwmoore/dokutwitterbootstrap/master/screenshot_980x1280.png)
 
 # Installation from Github
 
