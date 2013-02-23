@@ -1,10 +1,8 @@
+# About
+
 See template.info.txt for main info
 See COPYING for license info
 
-**This software is in an extremely early alpha version. It's recommended that
-you set your expectations low.**
-
-# About
 
 This "theme" is actually intended to be modified with a Twitter Bootstrap theme
 of your choice. Twitter Bootstrap is a framework to create websites that work
