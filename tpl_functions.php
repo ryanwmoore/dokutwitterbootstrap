@@ -247,9 +247,19 @@ if (!function_exists('tpl_incdir')) {
 function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header='', $firstlevel=false)
 {
 
+
     if (count($data) == 0)
     {
         return '';
+    }
+
+    global $USESIDETOCCHEVRONS;
+
+    if ($USESIDETOCCHEVRONS)
+    {
+        $chevronHTML = '<i class="icon-chevron-right"></i> ';
+    } else {
+        $chevronHTML = '';
     }
 
     $ret = '';
@@ -265,7 +275,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header=''
     //Only supports top level links for now.
     foreach($data as $heading)
     {
-        $ret .= '<li' . $li_inner . '><a href="#' . $heading['hid'] . '"><i class="icon-chevron-right"></i> '. $heading['title'] . '</a></li>';
+        $ret .= '<li' . $li_inner . '><a href="#' . $heading['hid'] . '">'. $chevronHTML . $heading['title'] . '</a></li>';
 
         $li_inner = '';
     }
