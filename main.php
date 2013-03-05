@@ -12,9 +12,6 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 
 $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER['REMOTE_USER'] );
 
-//global variable. Used by tpl_functions::_tpl_toc_to_twitter_bootstrap_*
-$USESIDETOCCHEVRONS = tpl_getConf('useSideToCChevrons');
-
 ?><!DOCTYPE html>
 <html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>">
 <head>
