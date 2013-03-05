@@ -146,7 +146,7 @@ $USESIDETOCCHEVRONS = tpl_getConf('useSideToCChevrons');
               <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
               <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
               <?php tpl_includeFile('footer.html') ?>
-              <div>
+              </div>
               <div class="clearer"></div>
               <div>
                 <p><a href="http://www.dokuwiki.org">DokuWiki</a>
