@@ -10,4 +10,4 @@ $conf['hideTools']        = 0;
 $conf['tagline']          = 'This is the tagline - explaining what this site is about.';
 $conf['sidebarID']        = 'sidebar';
 
-$meta['useSideToCChevrons']        = 1;
+$conf['useSideToCChevrons']        = 1;

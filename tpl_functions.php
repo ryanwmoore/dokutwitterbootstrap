@@ -253,9 +253,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header=''
         return '';
     }
 
-    global $USESIDETOCCHEVRONS;
-
-    if ($USESIDETOCCHEVRONS)
+    if (tpl_getConf('useSideToCChevrons') == 1)
     {
         $chevronHTML = '<i class="icon-chevron-right"></i> ';
     } else {
