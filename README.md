@@ -1,9 +1,11 @@
 # About
 
+*EARLY BOOTSTRAP 3 SUPPORT ADDED*: Still a bit buggy. See warnings section for
+information on using Bootstrap 2.3.2.
+
 See template.info.txt for main info
 
 See COPYING for license info
-
 
 This "theme" is actually intended to be modified with a Twitter Bootstrap theme
 of your choice. Twitter Bootstrap is a framework to create websites that work
@@ -14,7 +16,7 @@ changes would require changing the actual template layout (mostly in main.php).
 
 Effort has been put into making the template's public facing content look okay.
 Some back end functionality (e.g., the admin interface) may look distorted, but
-should be useful.
+should still be functional.
 
 # Why This Theme?
 
@@ -62,7 +64,7 @@ theme. Then, replace the following files with your own Bootstrap files:
 
 * css/
     * bootstrap.min.css
-    * bootstrap-responsive.min.css
+    * bootstrap-theme.min.css
     * modifications.css: place minor global modifications to the
       bootstrap theme here. See included modifications.css, which enables the
       use of the floating top navbar 
@@ -86,18 +88,30 @@ non-public interfaces (e.g., edit interfaces, admin, configuration settings)
 may not have been updated and may appear ugly. These should still be
 functional.
 
+DokuWiki's "Binky" release puts some links in <bdi> tags. This causes some links
+to look unstyled. This could be fixed by modifying how DokuWiki generates these
+links. Instead, the file js/change_dokuwiki_structure.js dynamically modifies
+the DOM structure to fix this by detaching and reattaching such links. Yes, that
+"solution" seems a bit hacky. But, I'd rather not require that people modify
+DokuWiki's source code just to get this theme to work.
+
 ##  Bugs
 
 The only major ``bug'' that I am aware of is that, when attempting to upload a
-new file to the median manager, a file upload button may not appear.  Click on
+new file to the median manager, a file upload button might not appear.  Click on
 the words "select files..." and the file upload select box will appear.
 
 
 # Base Version
 
-This theme is based off of Twitter Bootstrap 2.3. Specifically the [fluid.htmlTop
-layout example](http://twitter.github.com/bootstrap/examples/fluid.html).
+This theme is based off of Twitter Bootstrap 3. This theme's migration to
+Bootstrap 3 is recent and, honestly, still a bit buggy. I felt it better to put
+it out on the Internet, mostly working, than to not have any Bootstrap 3 support
+at all.
 
+Older versions of this theme used Twitter Bootstrap 2.3.2. See [the last
+Bootstrap 2.3
+commit](https://github.com/ryanwmoore/dokutwitterbootstrap/commit/41397bf3351972cb917415827c6945536e1a77ca).
 
 # Theme Resources
 

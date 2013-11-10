@@ -26,7 +26,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/dokuwikicompatibility.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
-    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-responsive.min.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-theme.min.css")); ?>" rel="stylesheet">
 
 </head>
 
@@ -42,16 +42,18 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <div id="dokuwiki__site"><div id="dokuwiki__top"
         class="dokuwiki site mode_<?php echo $ACT ?>">
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./"><?php echo $conf['title']; ?></a>
-          <div class="nav-collapse collapse">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="./"><?php echo $conf['title']; ?></a>
+            </div>
+          <div class="navbar-collapse collapse">
             <div class="navbar-form pull-right">
                 <?php _tpl_output_search_bar(); ?>
             </div>
@@ -67,41 +69,40 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                     //echo 'Logged in as <a href="#" class="navbar-link">'.$username.'</a>';
                 ?>
             </p>
-            <ul class="nav">
+            <ul class="nav navbar-nav">
               <?php
                 tpl_includeFile('nav.html');
                 _tpl_output_tools_twitter_bootstrap($conf['useacl'] && $showTools);
               ?>
             </ul>
 
-          </div><!--/.nav-collapse -->
+          </div><!--/.navbar-collapse -->
         </div>
-      </div>
     </div>
 
 
     <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     <?php tpl_includeFile('header.html') ?>
 
-    <div class="wrapper">
 
-        <div class="container-fluid">
+        <div class="container">
         <!-- ********** ASIDE ********** -->
-          <div class="row-fluid">
-            <div class="span3">
+          <div class="row">
+            <div class="col-md-3">
               <?php if ($conf['sidebar']) { ?>
 
-                  <div class="sidebar-nav affix span3" id="sidetoc">
-                    <?php _tpl_toc_to_twitter_bootstrap(); ?>
+                  <div class="sidebar" id="sidetoc" role="navigation">
+                    <div class="list-group">
+                        <?php _tpl_toc_to_twitter_bootstrap(); ?>
+                    </div>
                   </div>
 
               <?php } ?>
-            </div><!--/span-->
-            <div class="span9">
-              <div class="row-fluid">
+            </div>
+            <div class="col-md-9">
+              <div class="row">
 
-                <div class="wrapper">
-                    <div class="span9" id="dokuwiki__content">
+                    <div class="col-md-9" id="dokuwiki__content">
 
                         <div class="pad">
 
@@ -116,24 +117,18 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
                         </div>
                     </div>
-
-                </div>
               </div><!--/row-->
-            </div><!--/span-->
+            </div><!--/col-md-9-->
           </div><!--/row-->
-        </div><!-- container-fluid -->
+        </div><!-- container -->
 
         <div class="clearer"></div>
         <hr class="a11y" />
 
-    </div><!-- /wrapper -->
-
     <!-- ********** FOOTER ********** -->
     <footer class="navbar navbar-static-bottom">
-      <div class="row-fluid">
-        <div class="span12">
-
-          <div class="navbar-inner">
+      <div class="row">
+        <div class="col-md-12">
               <?php _tpl_output_page_tools($showTools, 'li'); ?>
               <br />
               <div class="clearer"></div>
@@ -152,8 +147,6 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                     using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
                     by <a href="http://rmoore.cs.pitt.edu/">Ryan W. Moore</a></p>
               </div>
-          </div>
-
         </div>
       </div>
     </footer>
@@ -167,6 +160,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
     <!-- load any scripts that may require a newer jQuery library than DokuWiki provides. -->
     <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+    <script src="<?php echo tpl_getMediaFile(array("js/change_dokuwiki_structure.js")); ?>"></script>
 
     <!-- restore jQuery for DokuWiki -->
     <script src="<?php echo tpl_getMediaFile(array("js/restore_dokuwikis_jquery.js")); ?>"></script>

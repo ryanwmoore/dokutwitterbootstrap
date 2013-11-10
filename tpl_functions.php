@@ -255,15 +255,15 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header=''
 
     if (tpl_getConf('useSideToCChevrons') == 1)
     {
-        $chevronHTML = '<i class="icon-chevron-right"></i> ';
+        $chevronHTML = '<i class="glyphicon glyphicon-chevron-right"></i> ';
     } else {
         $chevronHTML = '';
     }
 
     $ret = '';
-    $ret .= '<ul class="nav nav-list">';
+    $ret .= '<ul class="nav list-group">';
     if ($header != '') {
-        $ret .= '<li class="nav-header">'.$header.'</li>';
+        $ret .= '<li class="list-group-item nav-header">'.$header.'</li>';
     }
     $ret .= '<li class="divider"></li>';
 
@@ -329,7 +329,7 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
     $elementend = "</$element>";
 
     if ($showTools) {
-        echo '<ul class="nav">';
+        echo '<ul class="nav navbar-nav">';
             //echo '<li>'.$lang['page_tools'].$spandivider;
 
             $content = tpl_action('edit', $textonly, '', true);
@@ -381,7 +381,7 @@ function _tpl_output_search_bar()
     print 'id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" />';
 
     print '<button type="submit" value="" class="button btn" title="'.$lang['btn_search'].'">';
-    print '<i class="icon-search"></i></button>';
+    print '<i class="glyphicon glyphicon-search"></i></button>';
 
     if($ajax) print '<div id="qsearch__out" class="ajax_qsearch JSpopup"></div>';
     print '</div></form>';
