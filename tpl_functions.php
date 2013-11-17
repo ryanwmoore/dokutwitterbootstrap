@@ -273,7 +273,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header=''
     //Only supports top level links for now.
     foreach($data as $heading)
     {
-        $ret .= '<li' . $li_inner . '><a href="#' . $heading['hid'] . '">'. $chevronHTML . $heading['title'] . '</a></li>';
+        $ret .= '<li' . $li_inner . '><a href="#' . $heading['link'] . '">'. $chevronHTML . $heading['title'] . '</a></li>';
 
         $li_inner = '';
     }
