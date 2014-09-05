@@ -27,7 +27,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <link href="<?php echo tpl_getMediaFile(array("css/dokuwikicompatibility.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-theme.min.css")); ?>" rel="stylesheet">
-    <link href="<?php echo tpl_getMediaFile(array("css/devoops-style.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("css/style.css")); ?>" rel="stylesheet">
 
 </head>
 
