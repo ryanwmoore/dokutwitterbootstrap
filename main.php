@@ -182,7 +182,13 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <script src="<?php echo tpl_getMediaFile(array("plugins/tinymce/tinymce.min.js")); ?>"></script>
     <script src="<?php echo tpl_getMediaFile(array("plugins/tinymce/jquery.tinymce.min.js")); ?>"></script>
     <!-- All functions for this theme + document.ready processing -->
+
+    <!--
+    This script is disabled. It's supposed only be used to power the devoops
+    demo (see the devoops's index.html).
+
     <script src="<?php echo tpl_getMediaFile(array("js/devoops.js")); ?>"></script>
+    -->
 
     <script src="<?php echo tpl_getMediaFile(array("js/change_dokuwiki_structure.js")); ?>"></script>
 
