@@ -4,7 +4,7 @@
  *
  * @link     https://github.com/ryanwmoore/dokutwitterbootstrap
  * @author   Ryan Moore <rwmoore07@gmail.com>
- * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html) + others
  */
 
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
@@ -162,8 +162,9 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                 <p><a href="http://www.dokuwiki.org">DokuWiki</a>
                     <a href="https://github.com/ryanwmoore/dokutwitterbootstrap">template</a>
                     (released under <a href="http://www.gnu.org/licenses/gpl.html">GPLv2</a>)
-                    using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-                    by <a href="http://rmoore.cs.pitt.edu/">Ryan W. Moore</a></p>
+                    using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and
+                    <a href="http://www.bootstrapstage.com/devoops/">Devoops</a>. By
+                    <a href="http://rmoore.cs.pitt.edu/">Ryan W. Moore</a>.</p>
               </div>
               <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
         </div>
