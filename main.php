@@ -173,10 +173,18 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
     <!-- load any scripts that may require a newer jQuery library than DokuWiki provides. -->
-    <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="<?php echo tpl_getMediaFile(array("plugins/jquery/jquery.min.js")); ?>"></script>
+    <script src="<?php echo tpl_getMediaFile(array("plugins/jquery-ui/jquery-ui.min.js")); ?>"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo tpl_getMediaFile(array("plugins/bootstrap/bootstrap.min.js")); ?>"></script>
+    <script src="<?php echo tpl_getMediaFile(array("plugins/justified-gallery/jquery.justifiedgallery.min.js")); ?>"></script>
+    <script src="<?php echo tpl_getMediaFile(array("plugins/tinymce/tinymce.min.js")); ?>"></script>
+    <script src="<?php echo tpl_getMediaFile(array("plugins/tinymce/jquery.tinymce.min.js")); ?>"></script>
+    <!-- All functions for this theme + document.ready processing -->
+    <script src="<?php echo tpl_getMediaFile(array("js/devoops.js")); ?>"></script>
+
     <script src="<?php echo tpl_getMediaFile(array("js/change_dokuwiki_structure.js")); ?>"></script>
 
     <!-- restore jQuery for DokuWiki -->
