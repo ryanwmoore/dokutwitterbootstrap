@@ -26,7 +26,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/dokuwikicompatibility.css")); ?>" rel="stylesheet">
 
-    /* Start of devoops's CSS */
+    <!-- Start of Devoops's CSS -->
     <link href="<?php echo tpl_getMediaFile(array("plugins/bootstrap/bootstrap.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("plugins/jquery-ui/jquery-ui.min.css")); ?>" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <link href="<?php echo tpl_getMediaFile(array("plugins/fullcalendar/fullcalendar.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("plugins/xcharts/xcharts.min.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("plugins/select2/select2.css")); ?>" rel="stylesheet">
-    /* End of Devoops's CSS */
+    <!-- End of Devoops's CSS -->
 
     <link href="<?php echo tpl_getMediaFile(array("css/style.css")); ?>" rel="stylesheet">
 
