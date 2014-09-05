@@ -261,7 +261,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $header=''
     }
 
     $ret = '';
-    $ret .= '<ul class="nav list-group">';
+    $ret .= '<ul class="nav main-menu list-group">';
     if ($header != '') {
         $ret .= '<li class="list-group-item nav-header">'.$header.'</li>';
     }

@@ -1,6 +1,5 @@
 body {
     padding-top: 60px;
-    padding-bottom: 40px;
 }
 .sidebar-nav {
     padding: 9px 0;
@@ -23,4 +22,20 @@ body {
         width: auto;
         top: 0;
   }
+}
+
+/* Devoops's #content tries to extend "infinitely" below itself */
+.pad > #content {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Devoops does not have CSS for a footer. So, let's add support for one. */
+.footer {
+    margin-top: 5px;
+    background-color: #f8f8f8;
+    border-top-color: #525252;
+    box-shadow: 0px -1px 2px 0px #272727;
+    box-sizing: border-box;
+    line-height: 20px;
 }

@@ -59,7 +59,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <div id="dokuwiki__site"><div id="dokuwiki__top"
         class="dokuwiki site mode_<?php echo $ACT ?>">
 
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-top">
         <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -123,7 +123,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
                         <div class="pad">
 
-                            <div class="page">
+                            <div class="page" id="content">
 
                                 <?php html_msgarea(); /* occasional error and info messages */ ?>
                                 <?php tpl_flush(); ?>
@@ -140,11 +140,12 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
         </div><!-- container -->
 
         <div class="clearer"></div>
-        <hr class="a11y" />
+
+    </div></div><!-- /site -->
 
     <!-- ********** FOOTER ********** -->
-    <footer class="navbar navbar-static-bottom">
-      <div class="row">
+    <div class="footer">
+      <div class="container">
         <div class="col-md-12">
               <?php _tpl_output_page_tools($showTools, 'li'); ?>
               <br />
@@ -164,13 +165,11 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                     using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
                     by <a href="http://rmoore.cs.pitt.edu/">Ryan W. Moore</a></p>
               </div>
+              <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
         </div>
       </div>
-    </footer>
+    </div>
 
-    </div></div><!-- /site -->
-
-    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
 
     <!-- load any scripts that may require a newer jQuery library than DokuWiki provides. -->
