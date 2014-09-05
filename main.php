@@ -25,8 +25,18 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <?php tpl_includeFile('meta.html') ?>
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/dokuwikicompatibility.css")); ?>" rel="stylesheet">
-    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
-    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-theme.min.css")); ?>" rel="stylesheet">
+
+    /* Start of devoops's CSS */
+    <link href="<?php echo tpl_getMediaFile(array("plugins/bootstrap/bootstrap.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("plugins/jquery-ui/jquery-ui.min.css")); ?>" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <link href="<?php echo tpl_getMediaFile(array("plugins/fancybox/jquery.fancybox.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("plugins/fullcalendar/fullcalendar.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("plugins/xcharts/xcharts.min.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("plugins/select2/select2.css")); ?>" rel="stylesheet">
+    /* End of Devoops's CSS */
+
     <link href="<?php echo tpl_getMediaFile(array("css/style.css")); ?>" rel="stylesheet">
 
 </head>
